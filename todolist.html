@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo</title>
+</head>
+
+<body>
+
+    <input type="text" class="js-input">
+    <input type="date" class="js-date">
+      <button onclick="
+      todoFunction();
+    " class="js-button">click</button>
+    
+    <div class="js-html"></div>
+
+   <script>
+   let local = JSON.parse(localStorage.getItem("todo"));    
+       let todoList = []        
+       let html = '';
+       function todoArray(){
+           let todoListHhml = '';
+        for (let i = 0; i < todoList.length; i++){
+          let looped = todoList[i];
+          let todo = looped.list;
+          let date = looped.date
+            html = `<p>
+            ${todo}
+            ${date}
+               
+              <button onclick="
+                todoList.splice(${i},1);
+                todoArray();
+               "class="js-delete">Delete</button>
+              </p>`;
+              todoListHhml += html;    
+               
+            };            
+          localStorage.setItem("todo",JSON.stringify(html));      
+        document.querySelector('.js-html').innerHTML = todoListHhml;
+
+       }
+
+    
+     function todoFunction(){
+      let todo = document.querySelector('.js-input');
+      let date = document.querySelector('.js-date')      
+      let todoValue = todo.value;
+      let dueDate = date.value;
+      todoList.push({
+        list : todoValue,
+        date :dueDate
+      })
+      todo.value = '';
+       todoArray()
+     }
+
+    //    let todoListHtml = ''; 
+    //  function todoFunction(){
+    //      let todoArray = [];
+
+    // const todoElem = document.querySelector('.js-input');
+
+    // let todo = todoElem.value;     
+    // todoArray.push(todo)
+    // todoElem.value = '';    
+
+    //    for(let i = 0; i < todoArray.length; i++) {
+    //      let todolist = todoArray[i]
+    //      let allTodo = `<p>
+    //         ${todolist}
+    //      <button onclick="
+    //        todoArray.splice(${i}, 1);
+    //        todoFunction();
+    //     ">Delete</button>
+    //     </p> `;
+    //     todoListHtml += allTodo;
+        
+    //    }
+
+    //    console.log(todoListHtml)
+    //       document.querySelector('.js-html').innerHTML = todoListHtml
+    //  }
+
+    
+
+
+   </script>
+
+</body>
+</html>

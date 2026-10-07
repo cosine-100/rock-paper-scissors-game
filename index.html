@@ -1,0 +1,54 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>if statement</title>
+</head>
+<body>
+    <!-- <button>9a</button>
+     <BUtton class="classb">9b</BUtton>
+    
+     <button onclick="
+      overAll()
+     ">head</button>
+
+     <button onclick="
+       const headElement = document.querySelector('p');
+      headElement.innerHTML='you chose: tail';
+     ">tail</button>
+     <p></p>
+-->
+
+<input type="text" placeholder="Name" class="js-put" onkeydown="
+if(event.key === 'Enter'){function1()}
+">
+
+<button onclick="
+function1()
+">submit</button>
+<p class="js-most"></p>
+    
+<script>
+ function function1() {
+  const getElement = document.querySelector('.js-put');
+ const cost = getElement.value;
+ document.querySelector('.js-most').innerHTML= `your name is:${cost}`;
+ }
+    /*
+    function overAll() {
+        const headElement = document.querySelector('p');
+      headElement.innerHTML='you chose:head';
+    }
+
+
+     // const elementSet = document.querySelector('button');
+     // console.log(elementSet)
+
+      //const changeElement = document.querySelector('.classb').innerHTML= '9b done!'
+      */
+</script>
+
+</body>
+</html>

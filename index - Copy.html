@@ -1,0 +1,56 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Cart Quantity</title>
+</head>
+<body>
+  <p>Cart Quantity</p>
+
+  <button onclick="
+  console.log(`cartQuantity = ${cartQuantity}`)
+  ">Show Quantity </button>
+
+  <button onclick="
+  cartQuantity++;
+  console.log(`cartQuantity = ${cartQuantity}`)
+  ">Add to Cart</button>
+
+  <button onclick="
+   cartQuantity=cartQuantity + 2;
+  console.log(`cartQuantity = ${cartQuantity}`)
+  ">+2</button>
+
+  <button onclick="
+   cartQuantity=cartQuantity + 3;
+  console.log(`cartQuantity = ${cartQuantity}`)
+  ">+3</button>
+
+  <button onclick="
+  cartQuantity=0
+ console.log('cart was reset')
+  console.log(`cartQuantity = ${cartQuantity}`)
+  ">Reset Cart</button>
+
+  <!--this is the Example in cart Quantity-->
+   
+
+    
+<script>
+const cost = 5 + (3*2) + 9;
+console.log(`$${cost}`)
+let cool = cost*0.1
+console.log(cool)
+
+
+
+
+  //let name = 'cosine';
+  //console.log(`${name}`)
+let cartQuantity = 0;
+</script>
+
+</body>
+</html>
